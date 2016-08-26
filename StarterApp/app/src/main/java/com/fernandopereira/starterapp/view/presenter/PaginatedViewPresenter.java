@@ -19,8 +19,6 @@ import rx.schedulers.Schedulers;
 
 public class PaginatedViewPresenter {
 
-    private static final String TAG = PaginatedViewPresenter.class.getSimpleName();
-
     protected final PaginatedView mMainView;
     protected final ServerApi mServerApi;
     protected final PaginatedCache mCache;
@@ -89,7 +87,7 @@ public class PaginatedViewPresenter {
     }
 
     public Foo getItem(String id) {
-        return (Foo) mCache.getItem(id);
+        return mCache.getItem(id);
     }
 
     @NonNull

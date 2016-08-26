@@ -9,12 +9,13 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class PaginatedViewModule {
+public class ViewModule {
 
     private PaginatedView mPaginatedView;
 
-    public PaginatedViewModule(PaginatedView paginatedView) {
+    public ViewModule with(PaginatedView paginatedView) {
         mPaginatedView = paginatedView;
+        return this;
     }
 
     @Provides

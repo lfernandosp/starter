@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.fernandopereira.starterapp.R;
 import com.fernandopereira.starterapp.inject.AppDependencyInjector;
-import com.fernandopereira.starterapp.inject.module.PaginatedViewModule;
+import com.fernandopereira.starterapp.inject.module.ViewModule;
 import com.fernandopereira.starterapp.model.Foo;
 import com.fernandopereira.starterapp.view.PaginatedView;
 import com.fernandopereira.starterapp.view.presenter.PaginatedViewPresenter;
@@ -34,7 +34,7 @@ public class MainActivityFragment extends Fragment implements PaginatedView {
         super.onCreate(savedInstanceState);
 
         AppDependencyInjector.getApplicationComponent()
-                .addSubmodule(new PaginatedViewModule(this))
+                .addSubmodule(new ViewModule().with(this))
                 .inject(this);
     }
 
